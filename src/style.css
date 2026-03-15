@@ -413,14 +413,27 @@ html, body {
 }
 .win-btn {
   background: var(--win-silver);
-  border: none;
-  padding: 4px 20px;
+  border-top: 2px solid var(--win-white);
+  border-left: 2px solid var(--win-white);
+  border-right: 2px solid var(--win-silver-dark);
+  border-bottom: 2px solid var(--win-silver-dark);
+  padding: 5px 20px;
   font-size: 12px;
   cursor: pointer;
   font-family: 'MS Sans Serif', Tahoma, Arial, sans-serif;
   min-width: 70px;
+  text-align: center;
+  box-shadow: 1px 1px 0 var(--win-silver-dark);
 }
 .win-btn:hover { background: var(--win-silver-light); }
+.win-btn:active {
+  border-top: 2px solid var(--win-silver-dark);
+  border-left: 2px solid var(--win-silver-dark);
+  border-right: 2px solid var(--win-white);
+  border-bottom: 2px solid var(--win-white);
+  box-shadow: none;
+  padding: 6px 19px 4px 21px;
+}
 
 /* Two-column list */
 .two-col-win {
@@ -725,6 +738,13 @@ html, body {
 @keyframes ticker {
   from { transform: translateX(100vw); }
   to { transform: translateX(-100%); }
+}
+@keyframes ticker-visible {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+#s1 .slide-1-ticker span {
+  animation: ticker-visible 60s linear infinite;
 }
 
 /* Final slide */
