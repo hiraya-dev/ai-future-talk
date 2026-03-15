@@ -242,31 +242,31 @@
             <div class="bar-label-win">Data Science — growing faster than any course you'll finish this year</div>
             <div style="font-size:12px; font-weight:bold; color:var(--win-navy); font-family:'MS Sans Serif',Tahoma,Arial,sans-serif;">+31% per year</div>
           </div>
-          <div class="win-progress-track sunken" style="margin-bottom:10px;"><div class="win-progress-fill" style="width:78%"></div></div>
+          <div class="win-progress-track sunken" style="margin-bottom:10px;"><div class="win-progress-fill" data-width="78"></div></div>
 
           <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:2px;">
             <div class="bar-label-win">Cloud Specialist salaries — your kuya in the same job earned this much less last year</div>
             <div style="font-size:12px; font-weight:bold; color:var(--win-navy); font-family:'MS Sans Serif',Tahoma,Arial,sans-serif;">+51% salary jump</div>
           </div>
-          <div class="win-progress-track sunken" style="margin-bottom:10px;"><div class="win-progress-fill" style="width:65%"></div></div>
+          <div class="win-progress-track sunken" style="margin-bottom:10px;"><div class="win-progress-fill" data-width="65"></div></div>
 
           <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:2px;">
             <div class="bar-label-win">AI / ML Engineer — every company is hiring this role and not enough people know how</div>
             <div style="font-size:12px; font-weight:bold; color:#800000; font-family:'MS Sans Serif',Tahoma,Arial,sans-serif;">#1 fastest growing</div>
           </div>
-          <div class="win-progress-track sunken" style="margin-bottom:10px;"><div class="win-progress-fill" style="width:90%"></div></div>
+          <div class="win-progress-track sunken" style="margin-bottom:10px;"><div class="win-progress-fill" data-width="90"></div></div>
 
           <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:2px;">
             <div class="bar-label-win">PH AI market — the window is open right now, not in 5 years when everyone else catches up</div>
             <div style="font-size:12px; font-weight:bold; color:var(--win-navy); font-family:'MS Sans Serif',Tahoma,Arial,sans-serif;">$1B → $3.5B by 2030</div>
           </div>
-          <div class="win-progress-track sunken" style="margin-bottom:10px;"><div class="win-progress-fill" style="width:72%"></div></div>
+          <div class="win-progress-track sunken" style="margin-bottom:10px;"><div class="win-progress-fill" data-width="72"></div></div>
 
           <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:2px;">
             <div class="bar-label-win">PH startup ecosystem — somebody is building the next big thing right now. Why not you?</div>
             <div style="font-size:12px; font-weight:bold; color:var(--win-navy); font-family:'MS Sans Serif',Tahoma,Arial,sans-serif;">Doubled to $6.4B in 1 yr</div>
           </div>
-          <div class="win-progress-track sunken"><div class="win-progress-fill" style="width:55%"></div></div>
+          <div class="win-progress-track sunken"><div class="win-progress-fill" data-width="55"></div></div>
 
           </div>
         </div>
@@ -377,12 +377,17 @@
           <strong style="color:white;">Filipino developers are already fluent.</strong><br>
           That's not a soft skill anymore. <span style="color:var(--win-yellow);">That's leverage.</span>
         </div>
-        <!-- Fake terminal -->
-        <div style="background:#000; border:2px solid #444; padding:14px 20px; font-family:'VT323',monospace; font-size:16px; color:#00ff00; text-align:left; max-width:520px; width:100%; line-height:1.9;">
-          <span style="color:#aad4ff;">C:\&gt;</span> describe --what-you-want --to AI<br>
-          <span style="color:#aad4ff;">C:\&gt;</span> <span style="color:white;">Building your idea...</span> <span style="color:var(--win-yellow);">█</span><br>
-          <span style="color:#aad4ff;">C:\&gt;</span> <span style="color:#00ff00;">Done. Your app is live.</span><br>
-          <span style="color:#555; font-size:13px;">"English is the programming language now." — Naval</span>
+        <div id="terminal-demo" class="terminal-box">
+          <div class="terminal-line" data-line="1">
+            <span class="terminal-prompt">C:\&gt;</span> <span class="terminal-cmd">describe --what-you-want --to AI</span>
+          </div>
+          <div class="terminal-line" data-line="2">
+            <span class="terminal-prompt">C:\&gt;</span> <span class="terminal-building">Building your idea...</span><span class="terminal-cursor">█</span>
+          </div>
+          <div class="terminal-line" data-line="3">
+            <span class="terminal-prompt">C:\&gt;</span> <span class="terminal-done">Done. Your app is live.</span>
+          </div>
+          <div class="terminal-quote">"English is the programming language now." — Naval</div>
         </div>
       </div>
 
@@ -435,9 +440,9 @@
 
       <!-- SLIDE 12: CTA -->
       <div class="slide" id="s12b" style="padding-top:20px;">
-        <div style="font-size:11px; font-family:'MS Sans Serif',Tahoma,Arial,sans-serif; color:#666; letter-spacing:3px; margin-bottom:4px;">YOUR MOVE — DON'T BE AN NPC</div>
+        <div style="font-size:11px; font-family:'MS Sans Serif',Tahoma,Arial,sans-serif; color:#666; letter-spacing:3px; margin-bottom:4px;">YOUR MOVE</div>
         <div class="slide-title" style="font-size:clamp(28px,3.8vw,46px); margin-bottom:10px;">This Weekend. <em>4 Steps.</em></div>
-        <!-- NPC guide ribbon -->
+        <!-- Guide ribbon -->
         <div style="width:100%; background:var(--win-navy); color:var(--win-cyan); font-family:'VT323',monospace; font-size:15px; padding:3px 10px; margin-bottom:10px; display:flex; justify-content:space-between; align-items:center;">
           <span>A field guide for building your first thing with AI</span>
           <span style="color:var(--win-yellow);">~1 weekend · free tools only</span>
@@ -458,7 +463,7 @@
           <div class="win-cta raised">
             <div class="win-cta-title">🚀 3. Ship — Sunday (~30 min)</div>
             <div class="win-cta-body">
-              Deploy on <strong>Vercel or Netlify</strong> — both free, both one-click. Get a real URL. Then post it: LinkedIn, X, anywhere. Tag it <strong>#DontBeAnNPC.</strong> Once it's live, the work becomes real. One person using your thing changes how you see yourself.
+              Deploy on <strong>Vercel or Netlify</strong> — both free, both one-click. Get a real URL. Then post it: LinkedIn, X, anywhere. Once it's live, the work becomes real. One person using your thing changes how you see yourself.
             </div>
           </div>
           <div class="win-cta raised">

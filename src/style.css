@@ -482,6 +482,17 @@ html, body {
   font-weight: bold;
   font-family: 'MS Sans Serif', Tahoma, Arial, sans-serif;
 }
+
+#s6 .win-progress-fill {
+  width: 0;
+  transition: width 0.7s ease-out;
+}
+#s6.active.bars-ready .win-progress-fill[data-width="78"] { width: 78%; transition-delay: 0.05s; }
+#s6.active.bars-ready .win-progress-fill[data-width="65"] { width: 65%; transition-delay: 0.13s; }
+#s6.active.bars-ready .win-progress-fill[data-width="90"] { width: 90%; transition-delay: 0.21s; }
+#s6.active.bars-ready .win-progress-fill[data-width="72"] { width: 72%; transition-delay: 0.29s; }
+#s6.active.bars-ready .win-progress-fill[data-width="55"] { width: 55%; transition-delay: 0.37s; }
+
 .bar-label-win {
   font-size: 12px;
   color: #333;
@@ -682,10 +693,18 @@ html, body {
     var(--win-navy) 0px, var(--win-navy) 10px,
     transparent 10px, transparent 14px
   );
+  background-size: 24px 100%;
   width: 0;
   transition: width 1.5s ease;
 }
-.slide.active .loading-fill { width: 100%; }
+#s11b.active.loading-ready .loading-fill {
+  width: 100%;
+  animation: loading-stripe 0.5s linear infinite;
+}
+@keyframes loading-stripe {
+  from { background-position: 0 0; }
+  to { background-position: 24px 0; }
+}
 
 /* Scrolling ticker */
 .win-ticker {
@@ -751,6 +770,38 @@ html, body {
 #nav-prev { left: 0; }
 #nav-next { right: 0; }
 #nav-prev:hover, #nav-next:hover { opacity: 1; background: var(--win-silver-light); }
+
+/* Terminal demo (slide 9) */
+.terminal-box {
+  background: #000;
+  border: 2px solid #444;
+  padding: 14px 20px;
+  font-family: 'VT323', monospace;
+  font-size: 16px;
+  text-align: left;
+  max-width: 520px;
+  width: 100%;
+  line-height: 1.9;
+}
+.terminal-prompt { color: #aad4ff; }
+.terminal-cmd { color: #00ff00; }
+.terminal-building { color: #fff; }
+.terminal-done { color: #00ff00; }
+.terminal-cursor {
+  color: var(--win-yellow);
+  animation: terminal-blink 1s step-end infinite;
+}
+.terminal-quote { color: #555; font-size: 13px; }
+.terminal-line,
+.terminal-quote { opacity: 0; transition: opacity 0.25s ease; }
+.terminal-line.visible,
+.terminal-quote.visible { opacity: 1; }
+.terminal-line[data-line="2"] .terminal-cursor { opacity: 0; }
+.terminal-line[data-line="2"].cursor-on .terminal-cursor { opacity: 1; }
+@keyframes terminal-blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
 
 /* Watermark tile pattern for desktop bg */
 .win-tile {

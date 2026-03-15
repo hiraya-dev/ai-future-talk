@@ -10,13 +10,61 @@ const sections = [
   'English is the New Code', 'The Real Question', 'The Wage Premium', 'Your 4 Action Steps', 'Closing — The Choice'
 ];
 
+let terminalTimeouts = [];
+
+function resetTerminal() {
+  const box = document.getElementById('terminal-demo');
+  if (!box) return;
+  terminalTimeouts.forEach(clearTimeout);
+  terminalTimeouts = [];
+  box.querySelectorAll('.terminal-line, .terminal-quote').forEach(el => {
+    el.classList.remove('visible', 'cursor-on');
+  });
+}
+
+function startTerminalAnimation() {
+  const box = document.getElementById('terminal-demo');
+  if (!box) return;
+  resetTerminal();
+  const line1 = box.querySelector('[data-line="1"]');
+  const line2 = box.querySelector('[data-line="2"]');
+  const line3 = box.querySelector('[data-line="3"]');
+  const quote = box.querySelector('.terminal-quote');
+  terminalTimeouts.push(setTimeout(() => line1.classList.add('visible'), 300));
+  terminalTimeouts.push(setTimeout(() => {
+    line2.classList.add('visible', 'cursor-on');
+  }, 900));
+  terminalTimeouts.push(setTimeout(() => {
+    line2.classList.remove('cursor-on');
+    line3.classList.add('visible');
+  }, 2800));
+  terminalTimeouts.push(setTimeout(() => quote.classList.add('visible'), 3400));
+}
+
 function goTo(n) {
+  const wasOnTerminal = slides[current].id === 's9b';
+  const wasOnBars = slides[current].id === 's6';
+  const wasOnLoading = slides[current].id === 's11b';
+  if (wasOnBars) slides[current].classList.remove('bars-ready');
+  if (wasOnLoading) slides[current].classList.remove('loading-ready');
   slides[current].classList.remove('active');
   current = Math.max(0, Math.min(n, total - 1));
   slides[current].classList.add('active');
   document.getElementById('title-num').textContent = current + 1;
   document.getElementById('status-slide').textContent = 'Slide ' + (current + 1) + ' of ' + total;
   document.getElementById('status-section').textContent = sections[current] || '';
+  if (wasOnTerminal) resetTerminal();
+  if (slides[current].id === 's9b') startTerminalAnimation();
+  if (slides[current].id === 's6') {
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      slides[current].classList.add('bars-ready');
+    }));
+  }
+  if (slides[current].id === 's11b') {
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      slides[current].classList.add('loading-ready');
+    }));
+  }
 }
 
 document.getElementById('tb-prev').addEventListener('click', () => goTo(current - 1));
