@@ -830,3 +830,619 @@ html, body {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Crect width='20' height='20' fill='%23008080'/%3E%3Cpath d='M0 10h20M10 0v20' stroke='%23007070' stroke-width='0.5'/%3E%3C/svg%3E");
   pointer-events: none;
 }
+
+/* ═══════════════════════════════════
+   REFACTORED INLINE STYLES
+═══════════════════════════════════ */
+
+/* Title bar close button bold weight */
+.title-btn--close {
+  font-weight: 900;
+}
+
+/* Toolbar info label pushed to the right */
+.toolbar-info {
+  margin-left: auto;
+  font-size: 11px;
+  color: #555;
+  padding: 0 8px;
+}
+
+/* Status bar right panel */
+.status-panel--right {
+  margin-left: auto;
+}
+
+/* ── Slide-level dark background slides ── */
+#s5, #s9b, #s10b, #s13 {
+  background: #000080;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* s4 centering */
+#s4 {
+  justify-content: center;
+}
+
+/* s2b centering */
+#s2b {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* s11b centering */
+#s11b {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Slide padding-top variants */
+#s7, #s8 {
+  padding-top: 24px;
+}
+#s12b {
+  padding-top: 20px;
+}
+
+/* ── Reusable: section label ── */
+.section-label {
+  font-size: 11px;
+  font-family: 'MS Sans Serif', Tahoma, Arial, sans-serif;
+  color: #666;
+  letter-spacing: 3px;
+  margin-bottom: 8px;
+}
+
+/* ── Slide 1: ticker wrapper ── */
+.slide-1-ticker-wrap {
+  width: 100%;
+  max-width: 1080px;
+  overflow: hidden;
+  white-space: nowrap;
+  background: var(--win-navy);
+  color: var(--win-cyan);
+  font-family: 'VT323', monospace;
+  font-size: 18px;
+  padding: 2px 0;
+}
+
+/* ticker-visible span */
+.ticker-visible {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* ── Slide intro layout (s1) ── */
+.slide-intro-layout {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  margin-top: 24px;
+  width: 100%;
+}
+
+/* ── Slide byline ── */
+.slide-byline {
+  font-size: 12px;
+  font-family: 'MS Sans Serif', Tahoma, Arial, sans-serif;
+  color: #666;
+  margin-bottom: 8px;
+  letter-spacing: 2px;
+}
+
+/* ── Slide tagline / intro body text ── */
+.slide-tagline {
+  font-size: 13px;
+  font-family: 'MS Sans Serif', Tahoma, Arial, sans-serif;
+  color: #555;
+  margin-top: 8px;
+  max-width: 42ch;
+}
+
+/* ── Dialog/error aside (pushed right) ── */
+.slide-dialog-aside {
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+/* dialog-buttons variant with silver bg */
+.dialog-buttons--silver {
+  background: var(--win-silver);
+  padding: 8px;
+}
+
+/* ── Question slide layout ── */
+.slide-question-layout {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* ── Col flex-1 ── */
+.col-flex {
+  flex: 1;
+}
+
+/* ── Question slide aside ── */
+.slide-question-aside {
+  flex-shrink: 0;
+  margin-top: 8px;
+}
+
+/* ── Attribution / italic label ── */
+.slide-attribution {
+  font-family: 'MS Sans Serif', Tahoma, Arial, sans-serif;
+  font-style: italic;
+  font-size: 13px;
+  color: #666;
+  margin-top: 12px;
+}
+
+/* ── Slide title font-size variants per slide ── */
+#s2 .slide-title {
+  font-size: clamp(42px, 7vw, 88px);
+}
+#s2b .slide-title {
+  font-size: clamp(28px, 4vw, 52px);
+  margin-bottom: 18px;
+  color: var(--win-navy);
+}
+#s3 .slide-title {
+  font-size: clamp(36px, 5vw, 60px);
+  margin-bottom: 16px;
+}
+#s4 .slide-title {
+  font-size: clamp(36px, 4.5vw, 54px);
+  margin-bottom: 14px;
+}
+#s6 .slide-title {
+  font-size: clamp(32px, 4.5vw, 54px);
+  margin-bottom: 14px;
+}
+#s7 .slide-title,
+#s8 .slide-title {
+  font-size: clamp(30px, 4vw, 48px);
+  margin-bottom: 12px;
+}
+#s12b .slide-title {
+  font-size: clamp(28px, 3.8vw, 46px);
+  margin-bottom: 10px;
+}
+
+/* ── Story grid (3-col) ── */
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 14px;
+  width: 100%;
+  max-width: 960px;
+}
+
+/* ── Story panel (flex col) ── */
+.story-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Story panel body (white bg) ── */
+.story-panel-body {
+  background: white;
+  margin: 2px;
+  padding: 14px 12px;
+  flex: 1;
+}
+
+/* ── Big monospace character ── */
+.story-big-char {
+  font-family: 'VT323', monospace;
+  font-size: 52px;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.story-big-char--muted {
+  color: #ccc;
+}
+.story-big-char--navy {
+  color: var(--win-navy);
+}
+
+/* ── Story list text ── */
+.story-list-text {
+  font-size: 12px;
+  font-family: 'MS Sans Serif', Tahoma, Arial, sans-serif;
+  color: #444;
+  line-height: 1.8;
+}
+
+/* ── Story result panel (dark bg, centered) ── */
+.story-result-body {
+  background: #000080;
+  margin: 2px;
+  padding: 20px 12px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* ── Story result number ── */
+.story-result-number {
+  font-family: 'VT323', monospace;
+  font-size: 100px;
+  color: var(--win-yellow);
+  line-height: 1;
+}
+
+/* ── Story result label ── */
+.story-result-label {
+  font-family: 'VT323', monospace;
+  font-size: 22px;
+  color: white;
+  margin-top: 4px;
+  line-height: 1.4;
+}
+
+/* ── Story result note ── */
+.story-result-note {
+  font-size: 11px;
+  color: #aad4ff;
+  font-family: 'MS Sans Serif', Tahoma, Arial, sans-serif;
+  margin-top: 12px;
+  line-height: 1.7;
+}
+
+/* ── Story quote footer ── */
+.slide-quote-footer {
+  margin-top: 14px;
+  font-size: 12px;
+  font-family: 'MS Sans Serif', Tahoma, Arial, sans-serif;
+  color: #555;
+  font-style: italic;
+  max-width: 960px;
+}
+
+/* ── PH context content wrapper (s3) ── */
+.slide-ph-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ── s3 ticker margin override ── */
+#s3 .win-ticker {
+  margin-top: auto;
+}
+
+/* ── Opportunity map wrapper ── */
+.opportunity-map {
+  width: 100%;
+  max-width: 860px;
+}
+
+/* ── Bar row ── */
+.bar-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 2px;
+}
+
+/* ── Bar value ── */
+.bar-value {
+  font-size: 12px;
+  font-weight: bold;
+  color: var(--win-navy);
+  font-family: 'MS Sans Serif', Tahoma, Arial, sans-serif;
+}
+.bar-value--hot {
+  color: #800000;
+}
+
+/* bar progress track margin override */
+.bar-track {
+  margin-bottom: 10px;
+}
+
+/* ── win-list-title story variant ── */
+.win-list-title--story {
+  font-size: 12px;
+  padding: 4px 10px;
+}
+.win-list-title--green {
+  background: #006400;
+}
+.win-list-title--navy {
+  background: #000080;
+}
+
+/* ── Filipino stories stat footnote ── */
+.win-story-note {
+  font-size: 10px;
+  color: #555;
+  font-family: 'MS Sans Serif', Tahoma, Arial, sans-serif;
+}
+
+/* ── win-story-title muted badge ── */
+.win-story-badge {
+  opacity: 0.7;
+  font-size: 9px;
+}
+
+/* ── Breaking news label ── */
+.breaking-label {
+  font-family: 'VT323', monospace;
+  font-size: 14px;
+  color: #aad4ff;
+  letter-spacing: 5px;
+  margin-bottom: 28px;
+}
+
+/* ── English subhead ── */
+.english-subhead {
+  font-family: 'VT323', monospace;
+  font-size: clamp(18px, 2.8vw, 26px);
+  color: #aad4ff;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+/* ── English headline ── */
+.english-headline {
+  font-family: 'VT323', monospace;
+  font-size: clamp(60px, 10vw, 130px);
+  color: white;
+  line-height: 0.95;
+  margin-bottom: 24px;
+}
+
+/* ── English body ── */
+.english-body {
+  font-size: 13px;
+  color: #aad4ff;
+  max-width: 600px;
+  font-family: 'MS Sans Serif', Tahoma, Arial, sans-serif;
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+
+/* ── Twist label ── */
+.twist-label {
+  font-family: 'MS Sans Serif', Tahoma, Arial, sans-serif;
+  font-size: 11px;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+  color: #aad4ff;
+}
+
+/* ── Twist headline ── */
+.twist-headline {
+  font-family: 'VT323', monospace;
+  font-size: clamp(36px, 6vw, 80px);
+  color: white;
+  line-height: 1.1;
+  max-width: 700px;
+}
+
+/* ── Twist accent (yellow span) ── */
+.twist-accent {
+  color: var(--win-yellow);
+}
+
+/* ── Twist body ── */
+.twist-body {
+  font-size: 13px;
+  color: #aad4ff;
+  margin-top: 24px;
+  max-width: 560px;
+  font-family: 'MS Sans Serif', Tahoma, Arial, sans-serif;
+  line-height: 1.7;
+}
+
+/* ── Twist watermark ── */
+.twist-watermark {
+  font-family: 'VT323', monospace;
+  font-size: 80px;
+  color: var(--win-yellow);
+  opacity: 0.15;
+  position: absolute;
+  bottom: 20px;
+  right: 40px;
+}
+
+/* ── Truth wrapper ── */
+.truth-wrapper {
+  max-width: 700px;
+}
+
+/* ── Truth path text ── */
+.truth-path {
+  font-family: 'VT323', monospace;
+  font-size: 16px;
+  color: #aad4ff;
+  letter-spacing: 4px;
+  margin-bottom: 24px;
+}
+
+/* ── Truth notepad title overrides ── */
+.truth-notepad-title {
+  font-size: 13px;
+  padding: 4px 8px;
+}
+
+/* ── Truth notepad body ── */
+.truth-notepad-body {
+  padding: 20px 24px;
+  background: white;
+  font-family: 'VT323', monospace;
+  font-size: 24px;
+  line-height: 1.7;
+  color: #000;
+}
+
+/* ── Truth highlight (navy, larger) ── */
+.truth-highlight {
+  color: var(--win-navy);
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* ── Truth footnote ── */
+.truth-footnote {
+  font-size: 18px;
+  color: #555;
+}
+
+/* ── Wage section wrapper ── */
+.wage-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 460px;
+}
+
+/* ── Wage section label (left-aligned inside centered wrapper) ── */
+.wage-section-label {
+  font-size: 11px;
+  font-family: 'MS Sans Serif', Tahoma, Arial, sans-serif;
+  color: #666;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+  width: 100%;
+  text-align: left;
+}
+
+/* ── Wage content box (white area) ── */
+.wage-content {
+  background: white;
+  margin: 2px;
+  margin-top: 0;
+  padding: 16px;
+  text-align: center;
+}
+
+/* ── Wage number ── */
+.wage-number {
+  font-family: 'VT323', monospace;
+  font-size: 90px;
+  line-height: 1;
+  color: var(--win-navy);
+}
+
+/* ── Wage title ── */
+.wage-title {
+  font-family: 'MS Sans Serif', Tahoma, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+/* ── Wage source ── */
+.wage-source {
+  font-family: 'MS Sans Serif', Tahoma, Arial, sans-serif;
+  font-size: 11px;
+  color: #666;
+}
+
+/* ── Wage note ── */
+.wage-note {
+  font-family: 'MS Sans Serif', Tahoma, Arial, sans-serif;
+  font-size: 12px;
+  color: #333;
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+/* ── Loading fill transition-delay variant ── */
+.loading-fill--delay1 {
+  transition-delay: 0.3s;
+}
+.loading-fill--delay2 {
+  transition-delay: 0.6s;
+}
+
+/* ── Wage dialog-buttons variant ── */
+.dialog-buttons--wage {
+  background: var(--win-silver);
+  padding: 8px 16px;
+}
+
+/* ── CTA guide ribbon ── */
+.cta-guide-ribbon {
+  width: 100%;
+  background: var(--win-navy);
+  color: var(--win-cyan);
+  font-family: 'VT323', monospace;
+  font-size: 15px;
+  padding: 3px 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ── CTA ribbon tag (yellow) ── */
+.cta-ribbon-tag {
+  color: var(--win-yellow);
+}
+
+/* ── BSOD body text ── */
+.bsod-body {
+  margin-bottom: 16px;
+}
+
+/* ── BSOD rules list ── */
+.bsod-rules {
+  margin-bottom: 24px;
+  line-height: 2;
+}
+
+/* ── BSOD finale (large closing text) ── */
+.bsod-finale {
+  font-size: clamp(22px, 3.5vw, 40px);
+  color: white;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+/* ── BSOD accent (yellow, larger) ── */
+.bsod-accent {
+  color: var(--win-yellow);
+  font-size: clamp(28px, 4.5vw, 54px);
+}
+
+/* ── BSOD closing credit ── */
+.bsod-closing {
+  margin-top: 28px;
+  font-size: 14px;
+  color: #aad4ff;
+  font-family: 'MS Sans Serif', Tahoma, Arial, sans-serif;
+}
+
+/* ── White text emphasis (used inside dark backgrounds) ── */
+.text-white {
+  color: white;
+}
+
+/* ── Wage loading box full width ── */
+.wage-loading-box {
+  width: 100%;
+}
+
+/* ── s2b section-label margin override ── */
+#s2b .section-label {
+  margin-bottom: 10px;
+}
+
+/* ── s11b wage-section-label margin override ── */
+#s11b .wage-section-label {
+  margin-bottom: 20px;
+}

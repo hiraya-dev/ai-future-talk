@@ -5,9 +5,9 @@ const total = slides.length;
 let current = 0;
 
 const sections = [
-  'Title Slide', 'Opening Question', 'My Story', 'PH Industry Overview', 'Reality Check',
+  "Don't Be an NPC", 'Opening Question', 'My Story', 'PH Industry Overview', 'Reality Check',
   'The Twist', 'Growth Opportunities', 'Filipino Builders', 'Skills to Build',
-  'English is the New Code', 'The Real Question', 'The Wage Premium', 'Your 4 Action Steps', 'Closing — The Choice'
+  'English is the New Code', 'The Real Question', 'The Wage Premium', 'Your 4 Action Steps', 'Closing: The Choice'
 ];
 
 let terminalTimeouts = [];
